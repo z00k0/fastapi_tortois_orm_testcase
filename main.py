@@ -31,7 +31,7 @@ async def upload_tariffs(tariff_request: Dict[str, List[TariffItem]]):
     return {"message": "Tariffs uploaded successfully"}
 
 
-@app.get("/calculate-insurance-cost")
+@app.get("/api/calculate-insurance-cost")
 async def calculate_insurance_cost(date: str, declared_value: float, cargo_type: str):
     t_obj = (
         await Tariff.filter(cargo_type__iexact=cargo_type)
